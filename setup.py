@@ -4,9 +4,17 @@
 from __future__ import print_function
 import os
 from setuptools import setup, find_packages
+import sys
 
 from notifypush import __program__, __version__, __description__
 
+if sys.argv[-1] == 'pub':
+    os.system('python setup.py sdist upload')
+    sys.exit()
+
+if sys.argv[-1] == 'pubtest':
+    os.system('python setup.py sdist upload -r https://testpypi.python.org/pypi')
+    sys.exit()
 
 README = open('README.rst').read()
 

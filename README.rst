@@ -2,6 +2,12 @@
 notify-push
 ***********
 
+.. image:: https://img.shields.io/pypi/v/notify-push.svg
+    :target: https://pypi.python.org/pypi/notify-push
+ 
+.. image:: https://img.shields.io/pypi/pyversions/notify-push.svg
+    :target: https://pypi.python.org/pypi/notify-push
+
 notify-push is a CLI tool to push notifications straight to your phone.
 
 The usual sysadmin method is to send alerts via email but there are tons of services out there with mobile apps that allow us to send push notifications, why not use those for faster and cleaners alerts?
