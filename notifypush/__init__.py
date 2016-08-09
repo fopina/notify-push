@@ -1,5 +1,5 @@
 __program__ = 'notify-push'
-__version__ = '0.0.1'
+__version__ = '0.0.2'
 __description__ = 'Push notifications straight to your phone using multiple services'
 
 import ConfigParser
