@@ -46,7 +46,8 @@ def main(args=None):
     if opts.config:
         load_config(opts.config)
     if not opts.message:
-        print('Press ctrl-D when done')
+        if sys.stdin.isatty():
+            print('Press ctrl-D when done')
         try:
             message = sys.stdin.read()
         except KeyboardInterrupt:
