@@ -40,8 +40,13 @@ def main(args=None):
     if opts.list_services:
         import pkgutil
         import os
+        import importlib
         for _, service, _ in pkgutil.iter_modules([os.path.join(os.path.dirname(__file__), 'services')]):
-            print(service)
+            m = importlib.import_module('.services.%s' % service, __package__).Service({}, validate=False)
+            print('[%s] - %s' % (service, m.url))
+            for opt in m.options:
+                print('%s - %s %s' % (opt[0], opt[1], '(required)' if opt[2] else ''))
+            print('')
         sys.exit(0)
     if opts.config:
         load_config(opts.config)

@@ -4,6 +4,11 @@ import json
 
 
 class Service(BaseService):
+    url = 'http://fopina.github.io/tgbot-pushitbot/'
+    options = [
+        ('token', 'token provided by @PushItBot', True),
+    ]
+
     def push(self, message):
         data = json.dumps({
             'msg': message,

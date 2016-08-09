@@ -4,6 +4,11 @@ import json
 
 
 class Service(BaseService):
+    url = 'http://notifcaster.com/'
+    options = [
+        ('token', 'token provided by @Notifcaster_bot', True),
+    ]
+
     def push(self, message):
         data = json.dumps({
             'api_token': self.settings.token,
