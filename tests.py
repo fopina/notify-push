@@ -55,7 +55,7 @@ token = 321
         notifypush.load_config(self.tempconfig)
 
         def _x(req):
-            if req.origin_req_host == 'tgbots-fopina.rhcloud.com':
+            if req.origin_req_host == 'tgbots.skmobi.com':
                 return StringIO('{"ok": false}')
             else:
                 return StringIO('{"ok": "true"}')

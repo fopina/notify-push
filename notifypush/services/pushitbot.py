@@ -14,9 +14,13 @@ class Service(BaseService):
             'msg': message,
         })
         req = urllib2.Request(
-            'https://tgbots-fopina.rhcloud.com/pushit/%s' % self.settings.token,
+            'https://tgbots.skmobi.com/pushit/%s' % self.settings.token,
             data,
-            {'Content-Type': 'application/json'}
+            {
+                'Content-Type': 'application/json',
+                # fake UA because of cloudflare...
+                'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.103 Safari/537.36',
+            }
         )
         try:
             f = urllib2.urlopen(req)
